@@ -1,0 +1,124 @@
+import React, { useState } from 'react'
+import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks'
+import * as ButtonStories from './Button.stories.js'
+
+<Meta of={ButtonStories} />
+
+export function Tabs({ children }) {
+  const panels = React.Children.toArray(children)
+  const [active, setActive] = useState(0)
+  return (
+    <div>
+      <div style={{ display: 'flex', gap: 24, borderBottom: '1px solid #e2e2e2', marginBottom: 24 }}>
+        {panels.map((panel, i) => (
+          <button
+            key={panel.props.label}
+            role="tab"
+            aria-selected={active === i}
+            onClick={() => setActive(i)}
+            style={{
+              padding: '8px 4px',
+              border: 'none',
+              background: 'none',
+              cursor: 'pointer',
+              fontSize: 14,
+              fontFamily: 'inherit',
+              fontWeight: active === i ? 600 : 400,
+              color: active === i ? '#7405F2' : '#73728C',
+              borderBottom: active === i ? '2px solid #7405F2' : '2px solid transparent',
+              marginBottom: -1,
+            }}
+          >
+            {panel.props.label}
+          </button>
+        ))}
+      </div>
+      {panels[active]}
+    </div>
+  )
+}
+
+export function TabPanel({ children }) {
+  return <div>{children}</div>
+}
+
+# Button
+
+<Tabs>
+
+<TabPanel label="Overview">
+
+## Usage
+
+Triggers an action when clicked. Use it for form submissions, confirmations, navigation, or any interaction that needs a clear call to action.
+
+```js
+import Button from '@/components/Button/Button.vue'
+```
+
+## Playground
+
+Try it out — every control below updates the button live.
+
+<Canvas of={ButtonStories.Playground} />
+<Controls of={ButtonStories.Playground} />
+
+## Best practices
+
+<table>
+  <tbody>
+    <tr>
+      <td>✅ Do</td>
+      <td>Reserve primary for the single most important action in the view. Use secondary or ghost for everything else based on emphasis.</td>
+    </tr>
+    <tr>
+      <td>✅ Do</td>
+      <td>Write labels that describe the action ("Save changes", "Delete account", "Send invite"), not vague labels like "OK" or "Click here".</td>
+    </tr>
+    <tr>
+      <td>✅ Do</td>
+      <td>Show a loading state for actions that take time, like saving or submitting, so the user knows it's working.</td>
+    </tr>
+    <tr>
+      <td>❌ Don't</td>
+      <td>Place more than one primary button in the same view — this dilutes the visual hierarchy.</td>
+    </tr>
+    <tr>
+      <td>❌ Don't</td>
+      <td>Use the destructive variant without a confirmation step for irreversible actions like deleting data.</td>
+    </tr>
+    <tr>
+      <td>❌ Don't</td>
+      <td>Use a button for navigation. If it only takes the user to another page, use a link instead. Buttons are for actions like saving, deleting, or submitting.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Variants
+
+<Canvas of={ButtonStories.Variants} />
+
+### Sizes
+
+Small, medium, and large sizes vary by use. Use small in dense UIs like toolbars, medium for most cases, and large for your primary CTAs.
+
+<Canvas of={ButtonStories.Sizes} />
+
+### States
+
+All variants support default, disabled, and loading states. Use disabled when the action isn't currently available, and loading while an async action is in progress.
+
+<Canvas of={ButtonStories.States} />
+
+</TabPanel>
+
+<TabPanel label="Properties">
+
+<Canvas of={ButtonStories.Playground} />
+<Controls of={ButtonStories.Playground} />
+
+</TabPanel>
+
+</Tabs>

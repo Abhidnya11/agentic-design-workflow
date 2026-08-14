@@ -1,0 +1,103 @@
+/* Geometry mirrors the Figma Email Row master (node 3:2206).
+   Every value is a global token — see src/tokens/tokens.css. */
+
+.row {
+  display: flex;
+  align-items: center;
+  height: var(--ds-size-row-height);
+  padding-inline: var(--ds-spacing-16);
+  background: var(--ds-surface-base);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  height: var(--ds-size-row-height);
+  padding-left: var(--ds-spacing-8);
+  padding-right: var(--ds-spacing-0);
+  gap: var(--ds-spacing-6);
+  border-radius: var(--ds-radius-8);
+}
+
+/* State layers, matching the Read? / Hover? / Selected? variant axes. */
+.container[data-hovered='true'] {
+  background: var(--ds-surface-base-hover);
+  padding-right: var(--ds-spacing-4);
+}
+.container[data-selected='true'] {
+  background: var(--ds-surface-selected);
+  padding-right: var(--ds-spacing-40);
+}
+.container[data-selected='true'][data-hovered='true'] {
+  background: var(--ds-surface-selected-hover);
+  padding-right: var(--ds-spacing-4);
+}
+
+/* Interactive rows respond to real pointer and keyboard input. */
+.container[data-interactive='true'] {
+  cursor: pointer;
+}
+.container[data-interactive='true']:focus-visible {
+  outline: var(--ds-border-width-thick) solid var(--ds-content-accent);
+  outline-offset: calc(var(--ds-border-width-thin) * -1);
+}
+
+.checkboxSlot {
+  width: var(--ds-size-icon-sm);
+  height: var(--ds-size-icon-sm);
+  flex-shrink: 0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.messageDetails {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-40);
+  flex: 1;
+  min-width: 0;
+}
+
+/* HUG with a minimum, exactly as the Figma frame is configured. */
+.senderInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-4);
+  flex: 0 0 auto;
+  min-width: var(--ds-size-column-sm);
+  max-width: var(--ds-size-column-sm);
+}
+
+.messageInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-6);
+  flex: 1;
+  min-width: 0;
+}
+
+.dateInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-40);
+  flex-shrink: 0;
+}
+
+.trailing {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-4);
+  flex-shrink: 0;
+}
+
+.date {
+  min-width: var(--ds-size-column-xs);
+  text-align: right;
+}

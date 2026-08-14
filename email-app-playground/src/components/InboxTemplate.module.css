@@ -1,0 +1,52 @@
+/* Geometry mirrors the Figma Inbox Template (node 17:5724).
+   Every value is a global token — see src/tokens/tokens.css. */
+
+.template {
+  display: flex;
+  align-items: stretch;
+  height: 100dvh;
+  background: var(--ds-surface-base);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* The 62px gutter is not arbitrary: it is where the Email Row's sender text
+   starts (16 row + 8 container + 20 checkbox + 6 gap + 12 unread dot), so the
+   page title sits on the same optical line as the list below it. */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  height: var(--ds-size-page-header);
+  padding-left: var(--ds-size-page-gutter);
+  padding-right: var(--ds-spacing-40);
+  flex-shrink: 0;
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-24);
+  height: var(--ds-size-filter-bar);
+  padding-left: var(--ds-size-page-gutter);
+  padding-right: var(--ds-spacing-40);
+  flex-shrink: 0;
+}
+
+/* The Figma Slot. Content scrolls; the header and sidebar stay put. */
+.slot {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}

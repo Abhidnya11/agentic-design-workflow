@@ -1,0 +1,98 @@
+{
+  "$meta": {
+    "source": "Figma — Agentic Design Workflow",
+    "fileKey": "bBtnBaKCvMRYylxj0Ghp2q",
+    "generatedFrom": "figma-console MCP · figma.variables local collections",
+    "note": "Semantic values are pre-resolved through their primitive aliases. Primitives are recorded for traceability only and are deliberately NOT emitted as CSS custom properties, so component code cannot reference them.",
+    "modes": ["light", "dark"],
+    "notYetInFigma": {
+      "note": "Introduced while building the Inbox Template (node 17:5724). The template lays these out as raw numbers on the frames — they are not Figma variables yet. Promote them to the Size collection to close the gap; the names below are the ones to create.",
+      "size": ["icon-2xs", "sidebar", "nav-subheader", "page-header", "filter-bar", "page-gutter"]
+    }
+  },
+
+  "color": {
+    "Surface/base":           { "light": "#ffffff",                  "dark": "#191919",                  "aliasOf": "neutral/0 · neutral/950" },
+    "Surface/base-hover":     { "light": "rgb(0 0 0 / 0.05)",        "dark": "rgb(255 255 255 / 0.05)",  "aliasOf": "alpha/black-05 · alpha/white-05" },
+    "Surface/elevated":       { "light": "#ffffff",                  "dark": "#252525",                  "aliasOf": "neutral/0 · neutral/800" },
+    "Surface/sunken":         { "light": "#f7f7f5",                  "dark": "#202020",                  "aliasOf": "neutral/50 · neutral/850" },
+    "Surface/selected":       { "light": "rgb(35 131 226 / 0.14)",   "dark": "rgb(35 131 226 / 0.14)",   "aliasOf": "alpha/blue-14" },
+    "Surface/selected-hover": { "light": "rgb(35 131 226 / 0.2)",    "dark": "rgb(35 131 226 / 0.2)",    "aliasOf": "alpha/blue-20" },
+
+    "Surface/neutral-subtle": { "light": "#f1f1ef", "dark": "#373737", "aliasOf": "neutral/100 · neutral/700" },
+    "Surface/yellow-subtle":  { "light": "#fdecc8", "dark": "#564328", "aliasOf": "yellow/100 · yellow/800" },
+    "Surface/green-subtle":   { "light": "#dbeddb", "dark": "#243d30", "aliasOf": "green/100 · green/800" },
+    "Surface/blue-subtle":    { "light": "#d3e5ef", "dark": "#143a4e", "aliasOf": "blue/100 · blue/900" },
+    "Surface/brown-subtle":   { "light": "#eee0da", "dark": "#442a1e", "aliasOf": "brown/100 · brown/900" },
+
+    "Content/primary":        { "light": "#1d1b16", "dark": "#f1f1ef", "aliasOf": "neutral/900 · neutral/100" },
+    "Content/secondary":      { "light": "#9c9c9a", "dark": "#7f7f7f", "aliasOf": "neutral/400 · neutral/500" },
+    "Content/secondary-alt":  { "light": "#9c9c9a", "dark": "#d3d3d3", "aliasOf": "neutral/400 · neutral/200" },
+    "Content/tertiary":       { "light": "#5f5e5b", "dark": "#9c9c9a", "aliasOf": "neutral/600 · neutral/400" },
+    "Content/tertiary-alt":   { "light": "#c7c6c4", "dark": "rgb(255 255 255 / 0.2)", "aliasOf": "neutral/300 · alpha/white-20" },
+    "Content/accent":         { "light": "#2383e2", "dark": "#2383e2", "aliasOf": "blue/500" },
+
+    "Content/on-yellow":      { "light": "#402c1b", "dark": "rgb(255 255 255 / 0.87)", "aliasOf": "yellow/900 · alpha/white-87" },
+    "Content/on-green":       { "light": "#1c3829", "dark": "rgb(255 255 255 / 0.87)", "aliasOf": "green/900 · alpha/white-87" },
+    "Content/on-blue":        { "light": "#183347", "dark": "rgb(255 255 255 / 0.87)", "aliasOf": "blue/800 · alpha/white-87" },
+    "Content/on-brown":       { "light": "#442a1e", "dark": "rgb(255 255 255 / 0.87)", "aliasOf": "brown/900 · alpha/white-87" },
+
+    "Border/default":         { "light": "rgb(0 0 0 / 0.05)", "dark": "rgb(255 255 255 / 0.05)", "aliasOf": "alpha/black-05 · alpha/white-05" }
+  },
+
+  "spacing": {
+    "0": 0, "2": 2, "4": 4, "6": 6, "8": 8,
+    "12": 12, "16": 16, "20": 20, "24": 24, "32": 32, "40": 40
+  },
+
+  "radius": { "4": 4, "6": 6, "8": 8 },
+
+  "size": {
+    "indicator": 6,
+    "icon-2xs": 14,
+    "icon-xs": 16,
+    "icon-sm": 20,
+    "icon-md": 24,
+    "control-md": 28,
+    "row-height": 40,
+    "column-sm": 320,
+    "column-xs": 82,
+
+    "sidebar": 240,
+    "nav-subheader": 30,
+    "page-header": 50,
+    "filter-bar": 46,
+    "page-gutter": 62
+  },
+
+  "border": { "width/thin": 1, "width/thick": 2 },
+
+  "font": {
+    "family/default": "Momo Trust Sans",
+    "size/sm": 12, "size/md": 14, "size/lg": 17,
+    "line-height/sm": 16, "line-height/md": 20, "line-height/lg": 22,
+    "weight/regular": 400, "weight/medium": 500, "weight/semibold": 600,
+    "tracking/none": 0, "tracking/tight": -0.3
+  },
+
+  "textStyles": {
+    "title":       { "size": "lg", "lineHeight": "lg", "weight": "semibold", "tracking": "none",  "figmaStyle": "SemiBold" },
+    "body-strong": { "size": "md", "lineHeight": "md", "weight": "medium",   "tracking": "tight", "figmaStyle": "Medium" },
+    "body":        { "size": "md", "lineHeight": "md", "weight": "regular",  "tracking": "tight", "figmaStyle": "Regular" },
+    "label":       { "size": "sm", "lineHeight": "sm", "weight": "medium",   "tracking": "none",  "figmaStyle": "Medium" }
+  },
+
+  "primitives": {
+    "neutral/0": "#ffffff", "neutral/50": "#f7f7f5", "neutral/100": "#f1f1ef", "neutral/200": "#d3d3d3",
+    "neutral/300": "#c7c6c4", "neutral/400": "#9c9c9a", "neutral/500": "#7f7f7f", "neutral/600": "#5f5e5b",
+    "neutral/700": "#373737", "neutral/800": "#252525", "neutral/850": "#202020", "neutral/900": "#1d1b16",
+    "neutral/950": "#191919",
+    "blue/100": "#d3e5ef", "blue/500": "#2383e2", "blue/800": "#183347", "blue/900": "#143a4e",
+    "green/100": "#dbeddb", "green/800": "#243d30", "green/900": "#1c3829",
+    "yellow/100": "#fdecc8", "yellow/800": "#564328", "yellow/900": "#402c1b",
+    "brown/100": "#eee0da", "brown/900": "#442a1e",
+    "alpha/black-05": "rgb(0 0 0 / 0.05)", "alpha/white-05": "rgb(255 255 255 / 0.05)",
+    "alpha/white-20": "rgb(255 255 255 / 0.2)", "alpha/white-87": "rgb(255 255 255 / 0.87)",
+    "alpha/blue-14": "rgb(35 131 226 / 0.14)", "alpha/blue-20": "rgb(35 131 226 / 0.2)"
+  }
+}

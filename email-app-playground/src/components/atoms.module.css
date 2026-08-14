@@ -1,0 +1,141 @@
+/* Every value here resolves to a global token from src/tokens/tokens.css.
+   No literals, no component-specific tokens. */
+
+/* ---------------------------------------------------------------- text */
+.title,
+.bodyStrong,
+.body,
+.label {
+  font-family: var(--ds-font-family-default);
+  margin: 0;
+}
+.title {
+  font-size: var(--ds-font-size-lg);
+  line-height: var(--ds-font-line-height-lg);
+  font-weight: var(--ds-font-weight-semibold);
+  letter-spacing: var(--ds-font-tracking-none);
+}
+.bodyStrong {
+  font-size: var(--ds-font-size-md);
+  line-height: var(--ds-font-line-height-md);
+  font-weight: var(--ds-font-weight-medium);
+  letter-spacing: var(--ds-font-tracking-tight);
+}
+.body {
+  font-size: var(--ds-font-size-md);
+  line-height: var(--ds-font-line-height-md);
+  font-weight: var(--ds-font-weight-regular);
+  letter-spacing: var(--ds-font-tracking-tight);
+}
+.label {
+  font-size: var(--ds-font-size-sm);
+  line-height: var(--ds-font-line-height-sm);
+  font-weight: var(--ds-font-weight-medium);
+  letter-spacing: var(--ds-font-tracking-none);
+}
+
+/* ------------------------------------------------------------ tag button */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: var(--ds-size-icon-sm);
+  padding-inline: var(--ds-spacing-6);
+  border-radius: var(--ds-radius-4);
+  white-space: nowrap;
+  /* Hugs its label, exactly like the Figma Tag Button. Neighbouring text
+     truncates instead of the chip collapsing. */
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.tag > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tagNeutral { background: var(--ds-surface-neutral-subtle); color: var(--ds-content-secondary-alt); }
+.tagYellow  { background: var(--ds-surface-yellow-subtle);  color: var(--ds-content-on-yellow); }
+.tagGreen   { background: var(--ds-surface-green-subtle);   color: var(--ds-content-on-green); }
+.tagBlue    { background: var(--ds-surface-blue-subtle);    color: var(--ds-content-on-blue); }
+.tagBrown   { background: var(--ds-surface-brown-subtle);   color: var(--ds-content-on-brown); }
+
+/* ----------------------------------------------------------- icon button */
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ds-size-icon-sm);
+  height: var(--ds-size-icon-sm);
+  padding: var(--ds-spacing-0);
+  border: none;
+  background: none;
+  color: var(--ds-content-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------- action button */
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ds-size-control-md);
+  height: var(--ds-size-control-md);
+  padding: var(--ds-spacing-0);
+  border: none;
+  border-radius: var(--ds-radius-6);
+  background: none;
+  color: var(--ds-content-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.actionButton:hover { background: var(--ds-surface-base-hover); }
+.actionButton:focus-visible {
+  outline: var(--ds-border-width-thick) solid var(--ds-content-accent);
+  outline-offset: calc(var(--ds-border-width-thin) * -1);
+}
+
+/* ------------------------------------------------------------ action bar */
+.actionBar {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-spacing-2);
+  padding: var(--ds-spacing-2);
+  border-radius: var(--ds-radius-8);
+  background: var(--ds-surface-elevated);
+  border: var(--ds-border-width-thin) solid var(--ds-border-default);
+}
+
+/* -------------------------------------------------------------- checkbox */
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ds-size-icon-sm);
+  height: var(--ds-size-icon-sm);
+  padding: var(--ds-spacing-0);
+  border: none;
+  background: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.checkboxOn  { color: var(--ds-content-accent); }
+.checkboxOff { color: var(--ds-content-tertiary-alt); }
+
+/* ----------------------------------------------------------- unread dot */
+.dotContainer {
+  display: flex;
+  align-items: center;
+  padding-left: var(--ds-spacing-2);
+  padding-right: var(--ds-spacing-4);
+  flex-shrink: 0;
+}
+.dot {
+  width: var(--ds-size-indicator);
+  height: var(--ds-size-indicator);
+  border-radius: var(--ds-radius-8);
+  background: var(--ds-content-accent);
+}
+.dotSpacer {
+  width: var(--ds-size-indicator);
+  height: var(--ds-size-indicator);
+}

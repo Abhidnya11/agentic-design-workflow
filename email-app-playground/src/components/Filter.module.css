@@ -1,0 +1,53 @@
+/* Geometry mirrors the Figma Filter master (node 1:267, instanced at 17:5757).
+   Every value is a global token — see src/tokens/tokens.css. */
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-spacing-4);
+  padding: var(--ds-spacing-0);
+  border: none;
+  background: none;
+  /* The icons inherit this; the label picks it up from .label. */
+  color: var(--ds-content-tertiary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-spacing-6);
+}
+
+.label {
+  color: var(--ds-content-tertiary);
+  white-space: nowrap;
+}
+
+/* Figma defines the resting state only. Hover, open and active are the states
+   a real control needs; each reuses an existing content token rather than
+   inventing a colour. */
+.filter:hover,
+.filter:hover .label,
+.filter[data-open='true'],
+.filter[data-open='true'] .label,
+.filter[data-active='true'],
+.filter[data-active='true'] .label {
+  color: var(--ds-content-primary);
+}
+
+.filter:focus-visible {
+  outline: var(--ds-border-width-thick) solid var(--ds-content-accent);
+  outline-offset: var(--ds-spacing-2);
+  border-radius: var(--ds-radius-4);
+}
+
+.chevron {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.filter[data-open='true'] .chevron {
+  transform: rotate(180deg);
+}

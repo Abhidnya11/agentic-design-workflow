@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "../tokens/tokens.css";
+
+/* The design system owns colour, type and spacing. Tailwind is here for
+   playground chrome only — component styles never use its scales. */
+html,
+body {
+  background: var(--ds-surface-sunken);
+  color: var(--ds-content-primary);
+  font-family: var(--ds-font-family-default);
+}
+
+* {
+  box-sizing: border-box;
+}

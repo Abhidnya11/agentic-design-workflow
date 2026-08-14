@@ -1,0 +1,133 @@
+/* Geometry mirrors the Figma Inbox Template sidebar (node 17:5725) and the
+   Nav Menu Item / Nav Subheader masters (node 3:2197 and its remote twin).
+   Every value is a global token — see src/tokens/tokens.css. */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-spacing-12);
+  width: var(--ds-size-sidebar);
+  flex-shrink: 0;
+  height: 100%;
+  /* Figma clips the frame; a real sidebar has to cope with a long nav. */
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--ds-surface-sunken);
+  border-right: var(--ds-border-width-thin) solid var(--ds-border-default);
+}
+
+/* -------------------------------------------------------- account header */
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-8);
+  padding: var(--ds-spacing-16);
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: var(--ds-size-icon-sm);
+  height: var(--ds-size-icon-sm);
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+  /* Shows through whenever there is no photo, behind the initials. */
+  background: var(--ds-surface-neutral-subtle);
+}
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ds-content-tertiary);
+  font-family: var(--ds-font-family-default);
+  font-size: var(--ds-font-size-sm);
+  font-weight: var(--ds-font-weight-semibold);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.accountText {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---------------------------------------------------------------- groups */
+
+.group {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.subheader {
+  display: flex;
+  align-items: center;
+  height: var(--ds-size-nav-subheader);
+  padding-inline: var(--ds-spacing-16);
+  flex-shrink: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: var(--ds-spacing-0);
+  padding: var(--ds-spacing-0);
+  list-style: none;
+}
+
+/* ------------------------------------------------------------- menu item */
+
+/* The outer gutter is on the item, so the hover pill inset matches Figma. */
+.item {
+  display: flex;
+  flex-direction: column;
+  padding-inline: var(--ds-spacing-8);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-spacing-6);
+  width: 100%;
+  padding: var(--ds-spacing-6) var(--ds-spacing-8);
+  border: none;
+  border-radius: var(--ds-radius-6);
+  background: none;
+  color: var(--ds-content-tertiary);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wrapper:hover {
+  background: var(--ds-surface-base-hover);
+}
+
+/* Selected?=Yes: the same state layer, with the label promoted to primary. */
+.wrapper[data-selected='true'] {
+  background: var(--ds-surface-base-hover);
+}
+.wrapper[data-selected='true'] .label {
+  color: var(--ds-content-primary);
+}
+
+.wrapper:focus-visible {
+  outline: var(--ds-border-width-thick) solid var(--ds-content-accent);
+  outline-offset: calc(var(--ds-border-width-thin) * -1);
+}
+
+.label {
+  flex: 1;
+  min-width: 0;
+  color: var(--ds-content-tertiary);
+}
+
+/* Count#21:21 — stays tertiary in both variants. */
+.count {
+  flex-shrink: 0;
+  color: var(--ds-content-tertiary);
+}
