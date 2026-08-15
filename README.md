@@ -16,10 +16,9 @@ without rebuilding the inbox from scratch every time.
 
 ## What's in here
 
-| Path                    | What it is                                                                                                   |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `email-app-playground/` | **The live work.** Next.js app: the token layer, the components, and the Inbox Template. Start here.           |
-| `src/`, `.storybook/`   | An earlier Vue 3 + Storybook scaffold with a single `Button`. Not wired to the token layer; kept for reference. |
+| Path                    | What it is                                                                                           |
+| ----------------------- | ------------------------------------------------------------------------------------------------------ |
+| `email-app-playground/` | **The live work.** Next.js app: the token layer, the components, and the Inbox Template. Start here. |
 
 Everything below refers to `email-app-playground/`.
 
