@@ -36,14 +36,6 @@ export const NAV_GROUPS: NavGroup[] = [
       { id: 'trash', label: 'Trash' },
     ],
   },
-  {
-    id: 'notion-apps',
-    title: 'Notion apps',
-    items: [
-      { id: 'notion', label: 'Notion' },
-      { id: 'notion-calendar', label: 'Notion Calendar' },
-    ],
-  },
   // The footer group carries no Nav Subheader in the master.
   {
     id: 'utility',

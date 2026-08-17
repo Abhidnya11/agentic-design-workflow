@@ -50,6 +50,19 @@
   flex-shrink: 0;
 }
 
+/* An interactive row hides the checkbox at rest and reveals it on hover,
+   selection, or keyboard focus. `visibility` rather than `opacity` so the
+   hidden button is neither clickable nor in the tab order, and the slot holds
+   its width either way, so the row doesn't shift when it appears. */
+.container[data-interactive='true'] .checkboxSlot {
+  visibility: hidden;
+}
+.container[data-interactive='true'][data-hovered='true'] .checkboxSlot,
+.container[data-interactive='true'][data-selected='true'] .checkboxSlot,
+.container[data-interactive='true']:focus-within .checkboxSlot {
+  visibility: visible;
+}
+
 .content {
   display: flex;
   align-items: center;
