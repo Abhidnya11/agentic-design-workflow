@@ -94,7 +94,8 @@ export function EmailRow({
       >
         <span className={s.checkboxSlot}>
           {/* The Figma master reveals the checkbox on hover/select only. An
-              interactive row keeps it visible at rest so it stays clickable. */}
+              interactive row keeps it mounted so focus and tab order survive
+              the reveal — the CSS is what hides it at rest. */}
           {(interactive || hovered || selected) && (
             <Checkbox
               checked={selected}
