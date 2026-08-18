@@ -36,6 +36,9 @@ export function Chrome({ altHref, altLabel }: { altHref: string; altLabel: strin
       <Link href={altHref} className="rounded-full px-3 py-1 hover:underline">
         {altLabel}
       </Link>
+      <Link href="/proto" className="rounded-full px-3 py-1 hover:underline">
+        Prototypes
+      </Link>
       <button type="button" onClick={toggle} className="cursor-pointer rounded-full px-3 py-1">
         {theme === 'light' ? 'Dark' : 'Light'}
       </button>
